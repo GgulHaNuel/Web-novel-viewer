@@ -7,4 +7,5 @@ const chapters = [
   { num: 5, title: "5일차", sub: "D-26", file: "chapters/ch5.html" },
   { num: 6, title: "6일차", sub: "D-25", file: "chapters/ch6.html" },
   { num: 7, title: "7일차", sub: "D-24", file: "chapters/ch7.html" },
+  { num: 8, title: "8일차", sub: "D-23", file: "chapters/ch8.html" },
 ];
