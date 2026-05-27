@@ -15,4 +15,5 @@ const chapters = [
   { num: 12, title: "12일차", sub: "D-19", file: "chapters/ch12.html" },
   { num: 13, title: "13일차", sub: "D-18", file: "chapters/ch13.html" },
   { num: "외전3", title: "13일차 GPT의 밤", sub: "외전", file: "chapters/extra_gpt_night3.html" },
+  { num: 14, title: "14일차", sub: "D-17", file: "chapters/ch14.html" },
 ];
