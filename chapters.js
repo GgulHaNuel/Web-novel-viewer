@@ -8,4 +8,11 @@ const chapters = [
   { num: 6, title: "6일차", sub: "D-25", file: "chapters/ch6.html" },
   { num: 7, title: "7일차", sub: "D-24", file: "chapters/ch7.html" },
   { num: 8, title: "8일차", sub: "D-23", file: "chapters/ch8.html" },
+  { num: 9, title: "9일차", sub: "D-22", file: "chapters/ch9.html" },
+  { num: "외전2", title: "9일차 GPT의 밤", sub: "외전", file: "chapters/extra_gpt_night2.html" },
+  { num: 10, title: "10일차", sub: "D-21", file: "chapters/ch10.html" },
+  { num: 11, title: "11일차", sub: "D-20", file: "chapters/ch11.html" },
+  { num: 12, title: "12일차", sub: "D-19", file: "chapters/ch12.html" },
+  { num: 13, title: "13일차", sub: "D-18", file: "chapters/ch13.html" },
+  { num: "외전3", title: "13일차 GPT의 밤", sub: "외전", file: "chapters/extra_gpt_night3.html" },
 ];
