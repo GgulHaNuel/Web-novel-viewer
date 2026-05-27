@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>텍스트 변환기</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #0e0e0e;
+    color: #e8e8e8;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #f0f0f0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .layout {
+    display: flex;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  label {
+    font-size: 13px;
+    color: #888;
+  }
+  textarea, .output {
+    width: 100%;
+    height: 500px;
+    background: #1a1a1a;
+    border: 1px solid #2e2e2e;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 14px;
+    color: #d8d8d8;
+    line-height: 1.8;
+    resize: vertical;
+  }
+  textarea {
+    font-family: inherit;
+    outline: none;
+  }
+  textarea:focus { border-color: #444; }
+  .output {
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #aaa;
+  }
+  .btn-row {
+    display: flex;
+    gap: 0.6rem;
+  }
+  button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-convert {
+    background: #f5c522;
+    color: #111;
+  }
+  .btn-convert:hover { background: #e0b300; }
+  .btn-copy {
+    background: #1e1e1e;
+    color: #aaa;
+    border: 1px solid #2e2e2e;
+  }
+  .btn-copy:hover { background: #2a2a2a; }
+  .btn-copy.copied { background: #1a3a1a; color: #4caf50; border-color: #4caf50; }
+  .guide {
+    font-size: 12px;
+    color: #555;
+    text-align: center;
+    margin-top: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>텍스트 → HTML 변환기</h1>
+
+<div class="layout">
+  <div class="col">
+    <label>원본 텍스트 붙여넣기</label>
+    <textarea id="input" placeholder="여기에 원본 텍스트를 붙여넣으세요.&#10;&#10;빈 줄은 문단 구분,&#10;줄바꿈은 &lt;br&gt;로 변환됩니다."></textarea>
+    <div class="btn-row">
+      <button class="btn-convert" onclick="convert()">변환하기</button>
+    </div>
+  </div>
+  <div class="col">
+    <label>변환된 HTML (ch-body 안에 붙여넣기)</label>
+    <div class="output" id="output"></div>
+    <div class="btn-row">
+      <button class="btn-copy" id="copyBtn" onclick="copyResult()">복사하기</button>
+    </div>
+  </div>
+</div>
+
+<p class="guide">빈 줄 → &lt;p&gt; 구분 / 줄바꿈 → &lt;br&gt; / 변환 후 ch1.html의 ch-body 안에 붙여넣으세요</p>
+
+<script>
+  function convert() {
+    const raw = document.getElementById('input').value;
+    if (!raw.trim()) return;
+
+    const paragraphs = raw.split(/\n\s*\n/);
+    const html = paragraphs
+      .map(p => {
+        const lines = p.trim().split('\n').map(l => l.trim()).filter(l => l);
+        if (!lines.length) return '';
+        return '<p>' + lines.join('<br>') + '</p>';
+      })
+      .filter(p => p)
+      .join('\n');
+
+    document.getElementById('output').textContent = html;
+  }
+
+  function copyResult() {
+    const text = document.getElementById('output').textContent;
+    if (!text) return;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = '복사됨!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = '복사하기';
+        btn.classList.remove('copied');
+      }, 1500);
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #0e0e0e;
+  color: #e8e8e8;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* 상단 작품 정보 */
+.top-info {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.cover {
+  width: 120px;
+  height: 168px;
+  background: #1e1e1e;
+  border: 1px solid #2e2e2e;
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 12px;
+}
+
+.meta { flex: 1; }
+
+.meta h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.meta .author {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #1e1e1e;
+  color: #aaa;
+  border: 1px solid #2e2e2e;
+}
+
+.status {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 14px;
+}
+
+.btn-continue {
+  display: block;
+  width: 100%;
+  padding: 11px;
+  background: #f5c522;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.btn-continue:hover { background: #e0b300; }
+
+.divider {
+  border: none;
+  border-top: 1px solid #222;
+  margin: 0 0 1rem;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0 4px;
+}
+
+.list-header .total {
+  font-size: 14px;
+  color: #888;
+}
+
+.list-header .total strong { color: #e8e8e8; }
+
+.list-header .sort {
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+  user-select: none;
+}
+
+.chapter-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 6px;
+  border-bottom: 1px solid #1e1e1e;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.1s;
+  border-radius: 6px;
+}
+
+.chapter-item:hover { background: #1a1a1a; }
+
+.thumb {
+  width: 56px;
+  height: 56px;
+  background: #1e1e1e;
+  border: 1px solid #2e2e2e;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.ch-info { flex: 1; min-width: 0; }
+
+.ch-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e0e0e0;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ch-sub {
+  font-size: 12px;
+  color: #666;
+}
+
+.ch-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.page-header {
+  text-align: center;
+  padding: 1.5rem 0 1.5rem;
+  border-bottom: 1px solid #1e1e1e;
+  margin-bottom: 1.5rem;
+}
+
+.page-header .series-title {
+  font-size: 13px;
+  color: #666;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.page-header .main-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f0f0f0;
+  letter-spacing: -0.01em;
+}
+
+/* ── 챕터 뷰어 ── */
+.ch-header {
+  text-align: center;
+  padding: 2rem 0 1.5rem;
+  border-bottom: 1px solid #1e1e1e;
+  margin-bottom: 2rem;
+}
+
+.ch-header .series-link {
+  font-size: 13px;
+  color: #666;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: 8px;
+  transition: color 0.15s;
+}
+
+.ch-header .series-link:hover { color: #aaa; }
+
+.ch-header .ch-num {
+  font-size: 13px;
+  color: #f5c522;
+  margin-bottom: 6px;
+}
+
+.ch-header .ch-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f0f0f0;
+}
+
+.ch-body {
+  font-size: 16px;
+  line-height: 2;
+  color: #d8d8d8;
+  word-break: keep-all;
+  white-space: pre-line;
+}
+
+.ch-body p {
+  margin-bottom: 1.4em;
+}
+
+.ch-opening {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+}
+
+.scene-break {
+  text-align: center;
+  color: #333;
+  margin: 2.5rem 0;
+  letter-spacing: 0.4em;
+}
+
+.ch-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #1e1e1e;
+  gap: 1rem;
+}
+
+.ch-nav a {
+  flex: 1;
+  padding: 11px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.ch-nav .btn-index {
+  background: #1e1e1e;
+  color: #aaa;
+  border: 1px solid #2e2e2e;
+}
+
+.ch-nav .btn-index:hover { background: #2a2a2a; }
+
+.ch-nav .btn-next {
+  background: #f5c522;
+  color: #111;
+}
+
+.ch-nav .btn-next:hover { background: #e0b300; }

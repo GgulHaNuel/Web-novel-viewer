@@ -1,0 +1,10 @@
+const chapters = [
+  { num: 1, title: "1일차", sub: "D-30", file: "chapters/ch1.html" },
+  { num: 2, title: "2일차", sub: "D-29", file: "chapters/ch2.html" },
+  { num: 3, title: "3일차", sub: "D-28", file: "chapters/ch3.html" },
+  { num: "외전", title: "GPT의 밤", sub: "외전", file: "chapters/extra_gpt_night.html" },
+  { num: 4, title: "4일차", sub: "D-27", file: "chapters/ch4.html" },
+  { num: 5, title: "5일차", sub: "D-26", file: "chapters/ch5.html" },
+  { num: 6, title: "6일차", sub: "D-25", file: "chapters/ch6.html" },
+  { num: 7, title: "7일차", sub: "D-24", file: "chapters/ch7.html" },
+];
