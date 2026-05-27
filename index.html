@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전자기 폭풍 속 그녀</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="page-header">
+    <div class="series-title">웹소설</div>
+    <div class="main-title">전자기 폭풍 속 그녀</div>
+  </div>
+
+  <div class="top-info">
+    <div class="cover">썸네일</div>
+    <div class="meta">
+      <h1>전자기 폭풍 속 그녀</h1>
+      <div class="author">조이잉</div>
+      <div class="badges">
+        <span class="badge">웹소설</span>
+        <span class="badge">로맨스</span>
+        <span class="badge">SF</span>
+        <span class="badge">성인</span>
+      </div>
+      <div class="status">연재 중 · 총 <span id="total-count"></span>화</div>
+      <a href="" id="btn-first" class="btn-continue">첫화 보기</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="list-header">
+    <span class="total">전체 <strong id="list-count"></strong></span>
+    <span class="sort" id="sort-btn">최신 순 ↓</span>
+  </div>
+
+  <div id="chapter-list"></div>
+
+</div>
+
+<script src="chapters.js"></script>
+<script>
+  let reversed = true;
+
+  function render() {
+    const list = reversed ? [...chapters].reverse() : [...chapters];
+    const total = chapters.length;
+
+    document.getElementById('total-count').textContent = total;
+    document.getElementById('list-count').textContent = total;
+    document.getElementById('btn-first').href = chapters[0].file;
+
+    document.getElementById('chapter-list').innerHTML = list.map(ch => `
+      <a href="${ch.file}" class="chapter-item">
+        <div class="thumb"></div>
+        <div class="ch-info">
+          <div class="ch-title">${ch.title}</div>
+          <div class="ch-sub">${ch.sub}</div>
+        </div>
+        <div class="ch-right"><span>🕐</span></div>
+      </a>
+    `).join('');
+  }
+
+  document.getElementById('sort-btn').addEventListener('click', () => {
+    reversed = !reversed;
+    document.getElementById('sort-btn').textContent = reversed ? '최신 순 ↓' : '오래된 순 ↓';
+    render();
+  });
+
+  render();
+</script>
+
+</body>
+</html>
