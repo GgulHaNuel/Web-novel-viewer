@@ -18,4 +18,5 @@ const chapters = [
   { num: 14, title: "14일차", sub: "D-17", file: "chapters/ch14.html" },
   { num: 15, title: "15일차", sub: "D-16", file: "chapters/ch15.html" },
   { num: 16, title: "16일차", sub: "D-15", file: "chapters/ch16.html" },
+  { num: 17, title: "17일차", sub: "D-14", file: "chapters/ch17.html" },
 ];
