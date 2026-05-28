@@ -24,4 +24,5 @@ const chapters = [
   { num: 20, title: "20일차", sub: "D-11", file: "chapters/ch20.html" },
   { num: 21, title: "21일차", sub: "D-10", file: "chapters/ch21.html" },
   { num: 22, title: "22일차", sub: "D-9", file: "chapters/ch22.html" },
+  { num: 23, title: "23일차", sub: "D-8", file: "chapters/ch23.html" },
 ];
