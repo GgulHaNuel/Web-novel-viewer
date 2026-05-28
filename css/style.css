@@ -350,10 +350,23 @@ body {
     font-size: 11px;
   }
 
-  /* 챕터 뷰어 */
+  /* 챕터 뷰어 — 모바일 몰입 모드 */
   .ch-header {
-    padding: 1.4rem 0 1.1rem;
-    margin-bottom: 1.5rem;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(14, 14, 14, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 100;
+    padding: 0.9rem 1rem 0.8rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid #222;
+    transform: translateY(-100%);
+    transition: transform 0.25s ease;
+  }
+
+  .ch-header.ui-visible {
+    transform: translateY(0);
   }
 
   .ch-header .series-link {
@@ -375,18 +388,32 @@ body {
     line-height: 2.1;
     word-break: keep-all;
     overflow-wrap: break-word;
+    padding-bottom: 5rem;
   }
 
   .ch-body p {
     margin-bottom: 1.2em;
   }
 
-  /* 하단 네비게이션 — 터치 영역 확보 + iOS 홈바 여백 */
+  /* 하단 네비게이션 — 고정 + 숨김 */
   .ch-nav {
-    margin-top: 2.5rem;
-    padding-top: 1.2rem;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(14, 14, 14, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 100;
+    margin-top: 0;
+    padding: 0.8rem 1rem;
+    padding-bottom: calc(0.8rem + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid #222;
     gap: 0.5rem;
-    padding-bottom: env(safe-area-inset-bottom, 0.5rem);
+    transform: translateY(100%);
+    transition: transform 0.25s ease;
+  }
+
+  .ch-nav.ui-visible {
+    transform: translateY(0);
   }
 
   .ch-nav a {
