@@ -37,4 +37,5 @@ const chapters = [
   { num: 33, title: "33일차", sub: "D+2", file: "chapters/ch33.html" },
   { num: 34, title: "34일차", sub: "D+3", file: "chapters/ch34.html" },
   { num: 35, title: "35일차", sub: "D+4", file: "chapters/ch35.html" },
+  { num: 36, title: "36일차", sub: "D+5", file: "chapters/ch36.html" },
 ];
