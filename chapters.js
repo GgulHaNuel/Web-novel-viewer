@@ -48,4 +48,7 @@ const chapters = [
   { num: 44, title: "보류 로그", sub: "D+13", file: "chapters/ch44.html" },
   { num: 45, title: "감찰 면담", sub: "D+14", file: "chapters/ch45.html" },
   { num: 46, title: "감찰 조건", sub: "D+15", file: "chapters/ch46.html" },
+  { num: 47, title: "세부 검사", sub: "D+16", file: "chapters/ch47.html" },
+  { num: 48, title: "관찰자의 흔들림", sub: "D+17", file: "chapters/ch48.html" },
+  { num: 49, title: "내부 감각 검사", sub: "D+18", file: "chapters/ch49.html" },
 ];
