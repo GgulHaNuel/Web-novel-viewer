@@ -54,4 +54,5 @@ const chapters = [
   { num: 50, title: "감찰관이 아닌 이름", sub: "D+19", file: "chapters/ch50.html" },
   { num: 51, title: "세 사람의 거리", sub: "D+20", file: "chapters/ch51.html" },
   { num: 52, title: "사적 규칙의 첫날", sub: "D+21", file: "chapters/ch52.html" },
+  { num: 53, title: "보고서의 빈칸", sub: "D+22", file: "chapters/ch53.html" },
 ];
