@@ -144,6 +144,12 @@ body {
 
 .ch-info { flex: 1; min-width: 0; }
 
+.ch-num-label {
+  color: #aaaaaa;
+  font-weight: 400;
+  margin-right: 4px;
+}
+
 .ch-title {
   font-size: 14px;
   font-weight: 500;

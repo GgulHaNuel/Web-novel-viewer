@@ -54,16 +54,19 @@
     document.getElementById('list-count').textContent = total;
     document.getElementById('btn-first').href = chapters[0].file;
 
-    document.getElementById('chapter-list').innerHTML = list.map(ch => `
+    document.getElementById('chapter-list').innerHTML = list.map(ch => {
+      const numLabel = typeof ch.num === 'number' ? `${ch.num}화` : ch.num;
+      return `
       <a href="${ch.file}" class="chapter-item">
         <div class="thumb"></div>
         <div class="ch-info">
-          <div class="ch-title">${ch.title}</div>
+          <div class="ch-title"><span class="ch-num-label">${numLabel}</span> ${ch.title}</div>
           <div class="ch-sub">${ch.sub}</div>
         </div>
         <div class="ch-right"><span>🕐</span></div>
       </a>
-    `).join('');
+    `;
+    }).join('');
   }
 
   document.getElementById('sort-btn').addEventListener('click', () => {

@@ -52,4 +52,5 @@ const chapters = [
   { num: 48, title: "관찰자의 흔들림", sub: "D+17", file: "chapters/ch48.html" },
   { num: 49, title: "내부 감각 검사", sub: "D+18", file: "chapters/ch49.html" },
   { num: 50, title: "감찰관이 아닌 이름", sub: "D+19", file: "chapters/ch50.html" },
+  { num: 51, title: "세 사람의 거리", sub: "D+20", file: "chapters/ch51.html" },
 ];
